@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hairstyle Package - CS Beauty Parlour</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body, html {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff69b4, #9370db);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      color: white;
+      position: relative;
+      z-index: 1000;
+    }
+    nav .logo a {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: linear-gradient(90deg, #ff69b4, #9370db);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav ul li {
+        padding: 10px 0;
+      }
+    }
+
+    /* Header Section */
+    header {
+      text-align: center;
+      background: linear-gradient(to right, #ff69b4, #9370db);
+      color: white;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Details Section */
+    .details {
+      background-color: #fce4ec;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .details h2 {
+      color: #b30059;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .details-content {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .details-text {
+      flex: 1;
+      min-width: 250px;
+      margin-left: 30px;
+    }
+    .details-text ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+    .price {
+      color: #009688;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #9370db;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background-color: #b497f0;
+    }
+
+    .details-img {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .details-img img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #9370db;
+      color: white;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* Small screen tweaks */
+    @media (max-width: 768px) {
+      .details-content {
+        flex-direction: column;
+      }
+      .details-text {
+        margin-left: 0;
+      }
+      .details-img img {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .details-text ul {
+        font-size: 0.95em;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="index.html">CS Beauty Parlour</a>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
+    <ul id="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header / Hero -->
+  <header>
+    <h1>Hairstyle Package</h1>
+    <p>Beautiful Hairstyles Tailored for Every Occasion!</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="details">
+      <h2>What’s Included:</h2>
+      <div class="details-content">
+        <!-- Text Section -->
+        <div class="details-text">
+          <ul>
+            <li>✔️ Bridal & Party Hair Styling</li>
+            <li>✔️ Bun, Braid, Open Curls & Waves</li>
+            <li>✔️ Hair Extensions (On Customer Demand)</li>
+            <li>✔️ Gajra / Floral Accessories (On Customer Demand)</li>
+            <li>✔️ Hair Setting Spray & Shine Finish</li>
+            <li>✔️ Front Styling & Volume Boosting</li>
+            <li>✔️ Venue Styling Service Available</li>
+          </ul>
+          <p class="price">💰 Package Cost: ₹3,000 – ₹8,000 INR</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+
+        <!-- Image Section -->
+        <div class="details-img">
+          <img src="https://media.weddingz.in/images/20221110110750/instagram.fbho2-1.fna_.fbcdn_.net-54548224520028230-1.jpg" alt="Hairstyle Side Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CS Beauty Parlour. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+
+      // Auto-close on mobile link click
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll("#nav-links a").forEach(link => {
+          link.addEventListener("click", () => {
+            nav.classList.remove("show");
+          });
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

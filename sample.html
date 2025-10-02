@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CS Beauty Parlor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: #fff0f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #ff69b4, #9370db);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+    }
+
+    .hero p {
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+
+    .btn {
+      background: white;
+      color: #ff69b4;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffe4ec;
+      color: #9370db;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about {
+      background-color: #fce4ec;
+    }
+
+    .services h2,
+    .gallery h2,
+    .booking h2,
+    .contact h2 {
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service {
+      background-color: #f8e8f8;
+      padding: 20px;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+    }
+
+    /* === Added styles for Top Services images === */
+    .service-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-box img {
+      width: 200px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      width: 250px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Booking Section */
+    .booking {
+      background-color: #ffe4ec;
+    }
+
+    /* Contact Form */
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contact label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .contact button {
+      background-color: #9370db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .contact button:hover {
+      background-color: #a080e8;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #9370db;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .service-list,
+      .gallery-grid,
+      .service-box {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery-grid img,
+      .service-box img {
+        width: 90%;
+        height: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome To CS Beauty Parlor</h2>
+    <p>Your Beauty, Our Passion. Step Into Elegance And Luxury.</p>
+    <p>Bringing Beauty At Your Doorstep!</p>
+    <a href="#services" class="btn">Explore Services</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>We are a premier beauty parlor offering high-end services in hair styling, makeup, skincare, and more. Our experienced team is here to help you look and feel your best.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>Our Top Services</h2>
+    <div class="service-box">
+      <img src="hairstyling.jpg" alt="Hair Styling Image">
+      <img src="skincare.webp" alt="Skin Care Image">
+      <img src="Makeup.jpeg" alt="Makeup Image">
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+      <img src="https://i.pinimg.com/originals/f2/0a/33/f20a33de038e387e9dea863b773b1555.jpg" alt="Makeup Sample">
+      
+      <img src="https://lh4.googleusercontent.com/4YHkUXIGZAQxSWLu4r-ghiV1ALWDCC6Xw-RSXFfxu3cAzNSSkudwJWWGF4fgLcvvXJdLkoWcIQgk14bQSxhHYrCUePE1LmC1IcK_TDZPlTuYfA8kE320OhoV2xwxTP-EY7-p0BNlOOn2ecJLiB1JORh08Ssa9RDzZuZ_uKmgLAnS8UJ_XwRRdPgv" alt="Hair Style">
+      <img src="https://cureskin.com/wp-content/uploads/2021/06/AdobeStock_143330491-1024x683.jpeg" alt="Facial">
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking">
+    <h2>Ready for a Makeover?</h2>
+    <a href="#contact" class="btn">Book Appointment</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="abc@example.com" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" placeholder="Your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CS Beauty Parlor </p>
+  </footer>
+
+</body>
+</html>

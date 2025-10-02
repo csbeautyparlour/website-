@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS Beauty Parlour</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', Georgia, serif;
+      background-color: #fff0f5;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff69b4, #9370db);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo a {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: linear-gradient(90deg, #ff69b4, #9370db);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #ff69b4, #9370db);
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .hero img.logo-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: white;
+      color: #ff69b4;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffe4ec;
+      color: #9370db;
+    }
+
+    /* Services */
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      color: #ff69b4;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .service-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service-box img {
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-box img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: 60px 20px;
+      background-color: #fce4ec;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      color: #ff69b4;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-grid img {
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #9370db;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Responsive Images */
+    @media (max-width: 768px) {
+      .service-box img,
+      .gallery-grid img {
+        width: 90%;
+        height: auto;
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="index.html">CS Beauty Parlour</a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>Our Top Services</h2>
+    <div class="service-box">
+      <a href="hairstylez.html">
+        <img src="hairstyling.jpg" alt="Hairstyle">
+      </a>
+      <a href="faciall.html">
+        <img src="skincare.webp" alt="Skin Care">
+      </a>
+      <a href="makeup.html">
+        <img src="Makeup.jpeg" alt="Makeup">
+      </a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+      <a href="makeup.html">
+        <img src="https://i.pinimg.com/originals/f2/0a/33/f20a33de038e387e9dea863b773b1555.jpg" alt="Makeup Sample">
+      </a>
+      <a href="hairstylez.html">
+        <img src="https://lh4.googleusercontent.com/4YHkUXIGZAQxSWLu4r-ghiV1ALWDCC6Xw-RSXFfxu3cAzNSSkudwJWWGF4fgLcvvXJdLkoWcIQgk14bQSxhHYrCUePE1LmC1IcK_TDZPlTuYfA8kE320OhoV2xwxTP-EY7-p0BNlOOn2ecJLiB1JORh08Ssa9RDzZuZ_uKmgLAnS8UJ_XwRRdPgv" alt="Hair Style">
+      </a>
+      <a href="faciall.html">
+        <img src="https://cureskin.com/wp-content/uploads/2021/06/AdobeStock_143330491-1024x683.jpeg" alt="Facial">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CS Beauty Parlour | All Rights Reserved</p>
+  </footer>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - CS Beauty Parlour</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff69b4, #9370db);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1000;
+    }
+
+    nav .logo a {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background: linear-gradient(90deg, #ff69b4, #9370db);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 10px 0;
+      }
+    }
+
+    /* Home Section */
+    .home {
+      max-width: 900px;
+      margin: 60px auto 80px;
+      padding: 40px 30px;
+      text-align: center;
+      background-color: #fce4ec;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .home img.logo-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #ff69b4;
+      object-fit: cover;
+      margin-bottom: 25px;
+    }
+
+    .home h1 {
+      font-size: 3.2em;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .home p {
+      font-size: 1.15em;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .home strong {
+      color: #b30059;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #9370db;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .home {
+        padding: 30px 20px;
+        margin: 40px 15px 60px;
+      }
+
+      .home h1 {
+        font-size: 2.4em;
+      }
+
+      .home p {
+        font-size: 1em;
+      }
+
+      .home img.logo-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .home h1 {
+        font-size: 2em;
+      }
+
+      .home p {
+        font-size: 0.95em;
+      }
+
+      .home img.logo-img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="index.html">CS Beauty Parlour</a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section class="home">
+    <img src="sAMPLE A4_241014_231820.jpg" alt="CS Beauty Parlour Logo" class="logo-img" />
+    <h1>Welcome to CS Beauty Parlour</h1>
+    <p>
+      Experience elegance, luxury, and expert care at <strong>CS Beauty Parlour</strong>. Our team is dedicated to enhancing your natural beauty with personalized services tailored to your unique style.
+    </p>
+    <p>
+      Whether you're seeking a fresh haircut, radiant skincare treatments, or flawless makeup for any occasion, we provide a relaxing atmosphere and premium products to ensure you leave feeling confident and refreshed.
+    </p>
+    <p>
+      Discover the art of beauty with us — your trusted partner on a journey to look and feel your absolute best.
+    </p>
+    <p><strong>– Chandani Solanki</strong></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CS Beauty Parlour | All Rights Reserved</p>
+  </footer>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll("#nav-links a").forEach(link => {
+          link.addEventListener("click", () => {
+            nav.classList.remove("show");
+          });
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

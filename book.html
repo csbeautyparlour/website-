@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - CS Beauty Parlour</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif;
+      background-color: #fff0f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff69b4, #9370db);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo a {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: linear-gradient(90deg, #ff69b4, #9370db);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* About Section */
+    .about {
+      background-color: #fce4ec;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about h1 {
+      font-size: 36px;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* QR Section */
+    .qr-section {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .qr-section img {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Footer */
+    footer {
+      background: #9370db;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">CS Beauty Parlour</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about">
+      <h1>CS Beauty Parlour </h1>
+      <p>
+        <strong>Connect With Us By Scanning This QR Code.</strong>
+      </p>
+    </section>
+
+    <!-- QR Section -->
+    <section class="qr-section">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/918733887538" alt="WhatsApp QR Code" />
+      <p>Scan to chat with us on WhatsApp!</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CS Beauty Parlour | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
